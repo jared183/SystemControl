@@ -1,0 +1,98 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsOne" aria-expanded="true" aria-controls="collapseLayoutsOne">
+        Generar Contrato
+      </a>
+
+      <div class="collapse" id="collapseLayoutsOne" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+        <nav class="sb-sidenav-menu-nested nav">
+          <a class="nav-link" routerLink="/plan-venta">Contratos Ventas</a>
+        </nav>
+      </div>
+
+      <div class="collapse" id="collapseLayoutsOne" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+        <nav class="sb-sidenav-menu-nested nav">
+          <a class="nav-link" routerLink="/plan-renta">Contratos Rentas</a>
+        </nav>
+      </div>
+
+      <mat-divider></mat-divider>
+      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsTwo" aria-expanded="false" aria-controls="collapseLayoutsTwo">
+        Contrato General
+      </a>
+
+      <mat-divider></mat-divider>
+      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsThree" aria-expanded="false" aria-controls="collapseLayoutsThree">
+        Contrato Pendiente
+      </a>
+
+      <div class="collapse" id="collapseLayoutsThree" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
+        <nav class="sb-sidenav-menu-nested nav">
+          <a class="nav-link" href="">Contratos Ventas</a>
+        </nav>
+      </div>
+
+      <div class="collapse" id="collapseLayoutsThree" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
+        <nav class="sb-sidenav-menu-nested nav">
+          <a class="nav-link" href="">Contratos Rentas</a>
+        </nav>
+      </div>
+
+      <mat-divider></mat-divider>
+      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsFor" aria-expanded="false" aria-controls="collapseLayoutsFor">
+        Contrato Finalizado
+      </a>
+
+      <div class="collapse" id="collapseLayoutsFor" aria-labelledby="headingFor" data-bs-parent="#sidenavAccordion">
+        <nav class="sb-sidenav-menu-nested nav">
+          <a class="nav-link" href="">Plan Ventas</a>
+        </nav>
+      </div>
+
+      <div class="collapse" id="collapseLayoutsFor" aria-labelledby="headingFor" data-bs-parent="#sidenavAccordion">
+        <nav class="sb-sidenav-menu-nested nav">
+          <a class="nav-link" href="">Plan Rentas</a>
+        </nav>
+      </div>
+
+      <mat-divider></mat-divider>
+      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsFive" aria-expanded="false" aria-controls="collapseLayoutsFive">
+        Contrato Cancelado
+      </a>
+
+      <div class="collapse" id="collapseLayoutsFive" aria-labelledby="headingFive" data-bs-parent="#sidenavAccordion">
+        <nav class="sb-sidenav-menu-nested nav">
+          <a class="nav-link" href="">Contratos Ventas</a>
+        </nav>
+      </div>
+
+      <div class="collapse" id="collapseLayoutsFive" aria-labelledby="headingFive" data-bs-parent="#sidenavAccordion">
+        <nav class="sb-sidenav-menu-nested nav">
+          <a class="nav-link" href="">Contratos Rentas</a>
+        </nav>
+      </div>
+
+      <mat-divider></mat-divider>
+      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsSix" aria-expanded="false" aria-controls="collapseLayoutsSix">
+        Recibo
+      </a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Seguridad Activa</span>
+    </mat-toolbar>
+    <img class="fondo-img" src="./assets/img/fondo.jpg">
+  </mat-sidenav-content>
+</mat-sidenav-container>
