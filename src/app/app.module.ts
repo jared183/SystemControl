@@ -1,3 +1,6 @@
+import { ReciboComponent } from './pages/formulario/recibo/recibo.component';
+import { TableReciboComponent } from './pages/tables/tableRecibo/tableRecibo.component';
+import { TableVentaComponent } from './pages/tables/tableVenta/tableVenta.component';
 import { FormRentaComponent } from './pages/formulario/formRenta/formRenta.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NgModule } from '@angular/core';
@@ -17,16 +20,21 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FormVentaComponent } from './pages/formulario/formVenta/formVenta.component';
 import { RentaComponent } from './pages/documents/renta/renta.component';
 import { VentaComponent } from './pages/documents/venta/venta.component';
+import { TableRentaComponent } from './pages/tables/tableRenta/tableRenta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MenuComponent,
+    ReciboComponent,
     FormRentaComponent,
     FormVentaComponent,
     RentaComponent,
-    VentaComponent
+    VentaComponent,
+    TableRentaComponent,
+    TableVentaComponent,
+    TableReciboComponent,
   ],
   imports: [
     BrowserModule,

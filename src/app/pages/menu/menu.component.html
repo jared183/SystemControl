@@ -1,97 +1,162 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav #drawer class="sidenav" mode="side" fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-  >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsOne" aria-expanded="true" aria-controls="collapseLayoutsOne">
-        Generar Contrato
-      </a>
+    [opened]="(isHandset$ | async) === true"
+    >
+    <mat-toolbar class="menu-tool">Menu</mat-toolbar>
 
-      <div class="collapse" id="collapseLayoutsOne" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-        <nav class="sb-sidenav-menu-nested nav">
-          <a class="nav-link" routerLink="/plan-venta">Contratos Ventas</a>
-        </nav>
-      </div>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav" >
+      <nav class="sb-sidenav accordion" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+          <div class="nav">
+            <mat-nav-list>
+              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsOne" aria-expanded="false" aria-controls="collapseLayoutsOne">
+                <div class="sb-nav-link-icon">
+                  <i class="bi bi-archive-fill"></i>
+                </div>
+                Generar Contrato
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a>
 
-      <div class="collapse" id="collapseLayoutsOne" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-        <nav class="sb-sidenav-menu-nested nav">
-          <a class="nav-link" routerLink="/plan-renta">Contratos Rentas</a>
-        </nav>
-      </div>
+              <div class="collapse" id="collapseLayoutsOne" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" routerLink="/tabla-venta">Contratos Ventas</a>
+                </nav>
+              </div>
 
-      <mat-divider></mat-divider>
-      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsTwo" aria-expanded="false" aria-controls="collapseLayoutsTwo">
-        Contrato General
-      </a>
+              <div class="collapse" id="collapseLayoutsOne" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" routerLink="/tabla-renta">Contratos Rentas</a>
+                </nav>
+              </div>
 
-      <mat-divider></mat-divider>
-      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsThree" aria-expanded="false" aria-controls="collapseLayoutsThree">
-        Contrato Pendiente
-      </a>
+              <mat-divider></mat-divider>
+              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsTwo" aria-expanded="false" aria-controls="collapseLayoutsTwo">
+                <div class="sb-nav-link-icon">
+                  <i class="bi bi-layout-sidebar-inset-reverse"></i>
+                </div>
+                Contrato General
+              </a>
 
-      <div class="collapse" id="collapseLayoutsThree" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
-        <nav class="sb-sidenav-menu-nested nav">
-          <a class="nav-link" href="">Contratos Ventas</a>
-        </nav>
-      </div>
+              <mat-divider></mat-divider>
+              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsThree" aria-expanded="false" aria-controls="collapseLayoutsThree">
+                <div class="sb-nav-link-icon">
+                  <i class="bi bi-hourglass-split"></i>
+                </div>
+                Contrato Pendiente
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a>
 
-      <div class="collapse" id="collapseLayoutsThree" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
-        <nav class="sb-sidenav-menu-nested nav">
-          <a class="nav-link" href="">Contratos Rentas</a>
-        </nav>
-      </div>
+              <div class="collapse" id="collapseLayoutsThree" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="">Contratos Ventas</a>
+                </nav>
+              </div>
 
-      <mat-divider></mat-divider>
-      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsFor" aria-expanded="false" aria-controls="collapseLayoutsFor">
-        Contrato Finalizado
-      </a>
+              <div class="collapse" id="collapseLayoutsThree" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="">Contratos Rentas</a>
+                </nav>
+              </div>
 
-      <div class="collapse" id="collapseLayoutsFor" aria-labelledby="headingFor" data-bs-parent="#sidenavAccordion">
-        <nav class="sb-sidenav-menu-nested nav">
-          <a class="nav-link" href="">Plan Ventas</a>
-        </nav>
-      </div>
+              <mat-divider></mat-divider>
+              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsFor" aria-expanded="false" aria-controls="collapseLayoutsFor">
+                <div class="sb-nav-link-icon">
+                  <i class="bi bi-calendar2-check-fill"></i>
+                </div>
+                Contrato Finalizado
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a>
 
-      <div class="collapse" id="collapseLayoutsFor" aria-labelledby="headingFor" data-bs-parent="#sidenavAccordion">
-        <nav class="sb-sidenav-menu-nested nav">
-          <a class="nav-link" href="">Plan Rentas</a>
-        </nav>
-      </div>
+              <div class="collapse" id="collapseLayoutsFor" aria-labelledby="headingFor" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="">Plan Ventas</a>
+                </nav>
+              </div>
 
-      <mat-divider></mat-divider>
-      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsFive" aria-expanded="false" aria-controls="collapseLayoutsFive">
-        Contrato Cancelado
-      </a>
+              <div class="collapse" id="collapseLayoutsFor" aria-labelledby="headingFor" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="">Plan Rentas</a>
+                </nav>
+              </div>
 
-      <div class="collapse" id="collapseLayoutsFive" aria-labelledby="headingFive" data-bs-parent="#sidenavAccordion">
-        <nav class="sb-sidenav-menu-nested nav">
-          <a class="nav-link" href="">Contratos Ventas</a>
-        </nav>
-      </div>
+              <mat-divider></mat-divider>
+              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsFive" aria-expanded="false" aria-controls="collapseLayoutsFive">
+                <div class="sb-nav-link-icon">
+                  <i class="bi bi-x-circle-fill"></i>
+                </div>
+                Contrato Cancelado
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a>
 
-      <div class="collapse" id="collapseLayoutsFive" aria-labelledby="headingFive" data-bs-parent="#sidenavAccordion">
-        <nav class="sb-sidenav-menu-nested nav">
-          <a class="nav-link" href="">Contratos Rentas</a>
-        </nav>
-      </div>
+              <div class="collapse" id="collapseLayoutsFive" aria-labelledby="headingFive" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="">Contratos Ventas</a>
+                </nav>
+              </div>
 
-      <mat-divider></mat-divider>
-      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsSix" aria-expanded="false" aria-controls="collapseLayoutsSix">
-        Recibo
-      </a>
-    </mat-nav-list>
+              <div class="collapse" id="collapseLayoutsFive" aria-labelledby="headingFive" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="">Contratos Rentas</a>
+                </nav>
+              </div>
+
+              <mat-divider></mat-divider>
+              <a class="nav-link collapsed" routerLink="/tabla-recibo" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsSix" aria-expanded="false" aria-controls="collapseLayoutsSix">
+                <div class="sb-nav-link-icon">
+                  <i class="bi bi-receipt"></i>
+                </div>
+                Recibo
+              </a>
+            </mat-nav-list>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
 
   </mat-sidenav>
 
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Seguridad Activa</span>
+
+
+      <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="buscador..." aria-label="buscador..." aria-describedby="btnNavbuscardor"/>
+          <button class="btn btn-primary" id="btnNavbarbuscador" type="button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form>
+      <!-- Navbar-->
+      <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" class="login-nav" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/login">Cerrar Sesión</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
     </mat-toolbar>
     <img class="fondo-img" src="./assets/img/fondo.jpg">
   </mat-sidenav-content>
